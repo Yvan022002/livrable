@@ -16,3 +16,22 @@ C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-wi
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.pdb
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.genruntimeconfig.cache
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\ref\livrable.dll
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\bin\Debug\net8.0-windows\livrable.exe
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\bin\Debug\net8.0-windows\livrable.deps.json
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\bin\Debug\net8.0-windows\livrable.runtimeconfig.json
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\bin\Debug\net8.0-windows\livrable.dll
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\bin\Debug\net8.0-windows\livrable.pdb
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.Form1.resources
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.Form2.resources
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.Properties.Resources.resources
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.csproj.GenerateResource.cache
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.AssemblyInfoInputs.cache
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.AssemblyInfo.cs
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.sourcelink.json
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.dll
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\refint\livrable.dll
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.pdb
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\livrable.genruntimeconfig.cache
+C:\Users\Mike\Documents\OneDrive - USherbrooke\Session 4\IFT215\Projet\Projet livrable 3\IFT215\obj\Debug\net8.0-windows\ref\livrable.dll

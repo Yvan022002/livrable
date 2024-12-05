@@ -32,6 +32,16 @@ namespace livrable
             g.FillRectangle(new SolidBrush(panel_report.BackColor), mainRectangle);
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
