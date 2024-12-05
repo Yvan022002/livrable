@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            lb_userName = new Label();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            panel3 = new Panel();
-            lb_alltranscations = new Label();
-            btn_addTransaction = new Button();
             panel4 = new Panel();
             panel_report = new Panel();
             pictureBox9 = new PictureBox();
@@ -61,13 +59,26 @@
             panel5 = new Panel();
             lb_planAlert = new Label();
             titre = new Label();
-            AllCategories = new ListBox();
             panel8 = new Panel();
-            button6 = new Button();
+            label7 = new Label();
+            label9 = new Label();
+            pictureBox11 = new PictureBox();
+            label8 = new Label();
+            pictureBox10 = new PictureBox();
             panel9 = new Panel();
             panel10 = new Panel();
+            allCategoriesPanel = new FlowLayoutPanel();
+            allTransaction = new DataGridView();
+            description = new DataGridViewTextBoxColumn();
+            Categorie = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            montant = new DataGridViewTextBoxColumn();
+            Entreprise = new DataGridViewTextBoxColumn();
+            btn_openCategorieForm = new Button();
+            btn_openTransactionForm = new Button();
+            label10 = new Label();
+            panel3 = new Panel();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panel_report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -82,12 +93,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)allTransaction).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(lb_userName);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -97,6 +113,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(204, 675);
             panel1.TabIndex = 0;
+            // 
+            // lb_userName
+            // 
+            lb_userName.AutoSize = true;
+            lb_userName.Location = new Point(26, 577);
+            lb_userName.Name = "lb_userName";
+            lb_userName.Size = new Size(130, 25);
+            lb_userName.TabIndex = 5;
+            lb_userName.Text = "nom utilisateur";
             // 
             // button5
             // 
@@ -124,7 +149,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 255);
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial", 9F);
+            button4.Font = new Font("Segoe UI", 9F);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.TopLeft;
             button4.Location = new Point(3, 277);
@@ -142,7 +167,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 255);
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Segoe UI", 9F);
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.TopLeft;
             button3.Location = new Point(0, 181);
@@ -151,6 +176,7 @@
             button3.TabIndex = 2;
             button3.Text = "Budget";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -160,7 +186,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 255);
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Segoe UI", 9F);
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.TopLeft;
             button2.Location = new Point(3, 88);
@@ -169,35 +195,6 @@
             button2.TabIndex = 1;
             button2.Text = "Overview";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(lb_alltranscations);
-            panel3.Controls.Add(btn_addTransaction);
-            panel3.Location = new Point(252, 312);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(882, 350);
-            panel3.TabIndex = 2;
-            // 
-            // lb_alltranscations
-            // 
-            lb_alltranscations.AutoSize = true;
-            lb_alltranscations.Font = new Font("Arial", 9F);
-            lb_alltranscations.Location = new Point(14, 17);
-            lb_alltranscations.Name = "lb_alltranscations";
-            lb_alltranscations.Size = new Size(137, 21);
-            lb_alltranscations.TabIndex = 8;
-            lb_alltranscations.Text = "All Transactions";
-            // 
-            // btn_addTransaction
-            // 
-            btn_addTransaction.Location = new Point(838, 12);
-            btn_addTransaction.Name = "btn_addTransaction";
-            btn_addTransaction.Size = new Size(39, 34);
-            btn_addTransaction.TabIndex = 7;
-            btn_addTransaction.Text = "+";
-            btn_addTransaction.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -237,10 +234,10 @@
             // lb_report
             // 
             lb_report.AutoSize = true;
-            lb_report.Font = new Font("Arial", 9F);
+            lb_report.Font = new Font("Segoe UI", 9F);
             lb_report.Location = new Point(11, 12);
             lb_report.Name = "lb_report";
-            lb_report.Size = new Size(64, 21);
+            lb_report.Size = new Size(65, 25);
             lb_report.TabIndex = 1;
             lb_report.Text = "Report";
             // 
@@ -420,10 +417,10 @@
             // lb_planAlert
             // 
             lb_planAlert.AutoSize = true;
-            lb_planAlert.Font = new Font("Arial", 9F);
+            lb_planAlert.Font = new Font("Segoe UI", 9F);
             lb_planAlert.Location = new Point(6, 12);
             lb_planAlert.Name = "lb_planAlert";
-            lb_planAlert.Size = new Size(86, 21);
+            lb_planAlert.Size = new Size(87, 25);
             lb_planAlert.TabIndex = 1;
             lb_planAlert.Text = "Plan Alert";
             // 
@@ -431,41 +428,62 @@
             // 
             titre.AutoSize = true;
             titre.Font = new Font("Segoe UI", 16F);
-            titre.Location = new Point(229, 22);
+            titre.Location = new Point(220, 0);
             titre.Name = "titre";
             titre.Size = new Size(150, 45);
             titre.TabIndex = 5;
             titre.Text = "Overview";
             // 
-            // AllCategories
-            // 
-            AllCategories.BorderStyle = BorderStyle.None;
-            AllCategories.Font = new Font("Arial", 9F);
-            AllCategories.FormattingEnabled = true;
-            AllCategories.ItemHeight = 21;
-            AllCategories.Location = new Point(-1, 0);
-            AllCategories.Name = "AllCategories";
-            AllCategories.Size = new Size(254, 168);
-            AllCategories.TabIndex = 8;
-            // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(10, 0, 0, 0);
-            panel8.Controls.Add(button6);
-            panel8.Controls.Add(AllCategories);
-            panel8.Location = new Point(229, 76);
+            panel8.Controls.Add(label7);
+            panel8.Location = new Point(236, 76);
             panel8.Name = "panel8";
-            panel8.Size = new Size(257, 174);
+            panel8.Size = new Size(250, 199);
             panel8.TabIndex = 10;
             // 
-            // button6
+            // label7
             // 
-            button6.Location = new Point(214, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(39, 34);
-            button6.TabIndex = 9;
-            button6.Text = "+";
-            button6.UseVisualStyleBackColor = true;
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.Font = new Font("Arial", 9F);
+            label7.Location = new Point(-1, 3);
+            label7.Name = "label7";
+            label7.Size = new Size(121, 21);
+            label7.TabIndex = 10;
+            label7.Text = "All Categories";
+            // 
+            // label9
+            // 
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(100, 23);
+            label9.TabIndex = 0;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Location = new Point(0, 0);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(100, 50);
+            pictureBox11.TabIndex = 0;
+            pictureBox11.TabStop = false;
+            // 
+            // label8
+            // 
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 23);
+            label8.TabIndex = 0;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(6, 3);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(52, 38);
+            pictureBox10.TabIndex = 0;
+            pictureBox10.TabStop = false;
             // 
             // panel9
             // 
@@ -484,12 +502,119 @@
             panel10.Size = new Size(10, 675);
             panel10.TabIndex = 11;
             // 
+            // allCategoriesPanel
+            // 
+            allCategoriesPanel.AutoScroll = true;
+            allCategoriesPanel.BackColor = Color.White;
+            allCategoriesPanel.FlowDirection = FlowDirection.TopDown;
+            allCategoriesPanel.Location = new Point(233, 101);
+            allCategoriesPanel.Name = "allCategoriesPanel";
+            allCategoriesPanel.Size = new Size(250, 171);
+            allCategoriesPanel.TabIndex = 11;
+            allCategoriesPanel.WrapContents = false;
+            // 
+            // allTransaction
+            // 
+            allTransaction.BackgroundColor = Color.White;
+            allTransaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            allTransaction.Columns.AddRange(new DataGridViewColumn[] { description, Categorie, Date, montant, Entreprise });
+            allTransaction.GridColor = Color.FromArgb(245, 255, 255);
+            allTransaction.Location = new Point(289, 355);
+            allTransaction.Name = "allTransaction";
+            allTransaction.RowHeadersWidth = 62;
+            allTransaction.Size = new Size(815, 307);
+            allTransaction.TabIndex = 12;
+            // 
+            // description
+            // 
+            description.HeaderText = "description";
+            description.MinimumWidth = 8;
+            description.Name = "description";
+            description.ReadOnly = true;
+            description.Width = 150;
+            // 
+            // Categorie
+            // 
+            Categorie.HeaderText = "Categorie";
+            Categorie.MinimumWidth = 8;
+            Categorie.Name = "Categorie";
+            Categorie.ReadOnly = true;
+            Categorie.Width = 150;
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 8;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 150;
+            // 
+            // montant
+            // 
+            montant.HeaderText = "montant";
+            montant.MinimumWidth = 8;
+            montant.Name = "montant";
+            montant.ReadOnly = true;
+            montant.Width = 150;
+            // 
+            // Entreprise
+            // 
+            Entreprise.HeaderText = "Entreprise";
+            Entreprise.MinimumWidth = 8;
+            Entreprise.Name = "Entreprise";
+            Entreprise.ReadOnly = true;
+            Entreprise.Width = 150;
+            // 
+            // btn_openCategorieForm
+            // 
+            btn_openCategorieForm.Location = new Point(492, 76);
+            btn_openCategorieForm.Name = "btn_openCategorieForm";
+            btn_openCategorieForm.Size = new Size(39, 34);
+            btn_openCategorieForm.TabIndex = 9;
+            btn_openCategorieForm.Text = "+";
+            btn_openCategorieForm.UseVisualStyleBackColor = true;
+            btn_openCategorieForm.Click += btn_openCategorieForm_Click;
+            // 
+            // btn_openTransactionForm
+            // 
+            btn_openTransactionForm.Location = new Point(1114, 355);
+            btn_openTransactionForm.Name = "btn_openTransactionForm";
+            btn_openTransactionForm.Size = new Size(39, 34);
+            btn_openTransactionForm.TabIndex = 13;
+            btn_openTransactionForm.Text = "+";
+            btn_openTransactionForm.UseVisualStyleBackColor = true;
+            btn_openTransactionForm.Click += btn_openTransactionForm_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.White;
+            label10.Location = new Point(0, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(121, 25);
+            label10.TabIndex = 14;
+            label10.Text = "All Categories";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(label10);
+            panel3.Location = new Point(233, 72);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(250, 28);
+            panel3.TabIndex = 15;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 255, 255);
             ClientSize = new Size(1179, 674);
+            Controls.Add(allCategoriesPanel);
+            Controls.Add(panel3);
+            Controls.Add(btn_openTransactionForm);
+            Controls.Add(btn_openCategorieForm);
+            Controls.Add(allTransaction);
             Controls.Add(panel10);
             Controls.Add(panel9);
             Controls.Add(panel8);
@@ -497,14 +622,12 @@
             Controls.Add(panel4);
             Controls.Add(titre);
             Controls.Add(panel5);
-            Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panel1.PerformLayout();
             panel_report.ResumeLayout(false);
             panel_report.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
@@ -523,8 +646,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)allTransaction).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -532,14 +661,10 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel3;
         private Panel panel5;
         private Label titre;
         private Label lb_report;
         private Label lb_planAlert;
-        private Button btn_addTransaction;
-        private ListBox AllCategories;
-        private Label lb_alltranscations;
         private Button button2;
         private Button button3;
         private Button button5;
@@ -565,8 +690,24 @@
         private Panel panel_report;
         private Panel panel4;
         private Panel panel8;
-        private Button button6;
         private Panel panel9;
         private Panel panel10;
+        private Label label8;
+        private PictureBox pictureBox10;
+        private Label label7;
+        private Label label9;
+        private PictureBox pictureBox11;
+        private FlowLayoutPanel allCategoriesPanel;
+        private DataGridView allTransaction;
+        private DataGridViewTextBoxColumn description;
+        private DataGridViewTextBoxColumn Categorie;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn montant;
+        private DataGridViewTextBoxColumn Entreprise;
+        private Button btn_openCategorieForm;
+        private Button btn_openTransactionForm;
+        private Label lb_userName;
+        private Label label10;
+        private Panel panel3;
     }
 }
