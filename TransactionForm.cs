@@ -11,7 +11,7 @@ using livrable.model;
 
 namespace livrable
 {
-    public partial class TransactionForm : Form,IObserver
+    public partial class TransactionForm : Form
     {
         private Form1 form1;
         private categories cats;
@@ -19,23 +19,15 @@ namespace livrable
         {
             form1 = mainForm;
             cats=form1.GetCategories();
-            cats.attachObserver(this);
-            loadCategorieOption();
+           
             InitializeComponent();
-            
+
+            loadCategorieOption();
+
         }
 
-        //update la liste de categorie disponible pour une depense
-        public void update(ISujet cats)
-        {
-            if(cats is categories)
-            {
-                categories cat = (categories)cats;
-                List<string> catOptions = cat.GetCatOptions();
-                txt_cat.DataSource = catOptions;
-            }
-            
-        }
+    
+  
 
         private void btn_addTransaction_Click(object sender, EventArgs e)
         {
@@ -61,6 +53,7 @@ namespace livrable
         {
             List<string> catOptions = new List<string>();
             catOptions = cats.GetCatOptions();
+            txt_cat.DataSource= catOptions;
             
         }
 

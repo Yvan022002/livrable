@@ -10,7 +10,7 @@ namespace livrable.model
     {
         private List<Panel> Allcategories;
         private readonly List<IObserver> observers = new List<IObserver>();
-        List<string>catOptions = new List<string>();
+       private List<string>catOptions = new List<string>();
         public categories() { Allcategories = new List<Panel>(); }
         public void addCategorie(string catName,Image catImage) {
             Panel categorieItem = new Panel();

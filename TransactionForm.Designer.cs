@@ -39,6 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // txt_desc
@@ -132,12 +133,23 @@
             label5.TabIndex = 13;
             label5.Text = "entreprise";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 16F);
+            label6.Location = new Point(298, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(355, 45);
+            label6.TabIndex = 14;
+            label6.Text = "Entrez votre transaction";
+            // 
             // TransactionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 255, 255);
             ClientSize = new Size(905, 506);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -170,5 +182,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private Label label6;
     }
 }
