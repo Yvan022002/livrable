@@ -11,17 +11,23 @@ namespace livrable
     {
         categories cats;
         DepensesRepository depensesRepository;
+        User _user;
+        LogInForm _logInForm;
 
-        public Form1(categories initialCats, DepensesRepository depenses)
+        public Form1(LogInForm logInForm,User user,categories initialCats, DepensesRepository depenses)
         {
-
+            _logInForm = logInForm;
+            _user = user;
+           
             cats = initialCats;
             depensesRepository = depenses;
             cats.attachObserver(this);
             depensesRepository.attachObserver(this);
+
             InitializeComponent();
             loadAllCategories();
-
+            loadAllTransaction();
+            lb_userName.Text = user.Name;
 
 
         }
@@ -32,6 +38,14 @@ namespace livrable
             foreach (Panel p in cats.GetAllCategories())
             {
                 allCategoriesPanel.Controls.Add(p);
+            }
+        }
+
+        public void loadAllTransaction()
+        {
+            foreach (Depense d in depensesRepository.GetDepenses())
+            {
+                allTransaction.Rows.Add(d.description, d.categorie, d.date, d.prix, d.entreprise);
             }
         }
 
@@ -78,9 +92,11 @@ namespace livrable
         }
 
 
+        //log out
         private void button5_Click(object sender, EventArgs e)
         {
-
+            _logInForm.Show();
+            this.Close();
         }
 
 

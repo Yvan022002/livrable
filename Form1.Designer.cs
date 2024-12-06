@@ -428,7 +428,7 @@
             // 
             titre.AutoSize = true;
             titre.Font = new Font("Segoe UI", 16F);
-            titre.Location = new Point(220, 0);
+            titre.Location = new Point(220, 9);
             titre.Name = "titre";
             titre.Size = new Size(150, 45);
             titre.TabIndex = 5;
@@ -609,7 +609,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 255, 255);
-            ClientSize = new Size(1179, 674);
+            ClientSize = new Size(1216, 674);
             Controls.Add(allCategoriesPanel);
             Controls.Add(panel3);
             Controls.Add(btn_openTransactionForm);

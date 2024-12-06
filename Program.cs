@@ -13,42 +13,12 @@ namespace livrable
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            categories Categories = new categories();
-            DepensesRepository depenses = new DepensesRepository();
+          UserRepository  userRepository = new UserRepository();
 
-            //initialiser des transactions par defaut
-            depenses.addDepense(new Depense
-            {
-                description = "achat d'une television",
-                categorie="immobilier",
-                date = DateTime.Now,
-                prix="$100000",
-                entreprise="Best buy"
-                
-            });
-            depenses.addDepense(new Depense
-            {
-                description = "viande de porc",
-                categorie = "epicerie",
-                date = DateTime.Now,
-                prix = "$80",
-                entreprise = "Maxi"
+            //user par defaut
+            userRepository.addUser(new User { Name = "yvan", Email = "yvan@gmail.com", Password = "12345" });
 
-            });
-            depenses.addDepense(new Depense
-            {
-                description = "facture d'electricite",
-                categorie = "immobilier",
-                date = DateTime.Now,
-                prix = "$180",
-                entreprise = "bailleur"
-
-            });
-
-            //initialiser des categorie par defaut
-            Categories.addCategorie("epicerie", Properties.Resources.groceries);
-            Categories.addCategorie("immobilier", Properties.Resources.immobilier);
-            Application.Run(new Form1(Categories,depenses));
+            Application.Run(new SignInForm(userRepository));
         }
     }
 }

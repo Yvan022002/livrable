@@ -18,3 +18,5 @@ C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-wi
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\ref\livrable.dll
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.TransactionForm.resources
 C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.categorieForm.resources
+C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.LogInForm.resources
+C:\Users\yvann\OneDrive\Bureau\mes support de cours\livrable\obj\Debug\net8.0-windows\livrable.SignInForm.resources
