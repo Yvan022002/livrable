@@ -1,0 +1,17 @@
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\bin\Debug\net8.0-windows\Projet.exe
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\bin\Debug\net8.0-windows\Projet.dll
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.Form1.resources
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.FormInscription.resources
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.csproj.GenerateResource.cache
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.AssemblyInfoInputs.cache
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.AssemblyInfo.cs
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.csproj.CoreCompileInputs.cache
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.dll
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\refint\Projet.dll
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.pdb
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\bin\Debug\net8.0-windows\Projet.deps.json
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\bin\Debug\net8.0-windows\Projet.runtimeconfig.json
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\bin\Debug\net8.0-windows\Projet.pdb
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\Projet.genruntimeconfig.cache
+D:\Mes cours\UDES\Automne 2024\IFT 215\Nouveau dossier\Projet\Projet\obj\Debug\net8.0-windows\ref\Projet.dll
