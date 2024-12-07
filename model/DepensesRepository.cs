@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace livrable.model
+﻿namespace livrable.model
 {
-    public class DepensesRepository:ISujet
+    public class DepensesRepository : ISujet
     {
         private List<IObserver> observers = new List<IObserver>();
-        private List<Depense> depenses=new List<Depense>();
+        private List<Depense> depenses = new List<Depense>();
         public DepensesRepository() { }
 
         public List<Depense> GetDepenses() { return depenses; }

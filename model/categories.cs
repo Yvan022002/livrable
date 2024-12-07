@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace livrable.model
+﻿namespace livrable.model
 {
     public class categories : ISujet
     {
         private List<Panel> Allcategories;
         private readonly List<IObserver> observers = new List<IObserver>();
-       private List<string>catOptions = new List<string>();
+        private List<string> catOptions = new List<string>();
         public categories() { Allcategories = new List<Panel>(); }
-        public void addCategorie(string catName,Image catImage) {
+        public void addCategorie(string catName, Image catImage)
+        {
             Panel categorieItem = new Panel();
             PictureBox pictureBox11 = new PictureBox();
             Label label8 = new Label();
@@ -36,7 +31,7 @@ namespace livrable.model
             pictureBox11.Size = new Size(52, 38);
             pictureBox11.TabIndex = 0;
             pictureBox11.TabStop = false;
-           
+
             //Panel qui contient le tout
             categorieItem.BackColor = Color.FromArgb(245, 255, 255);
             categorieItem.Controls.Add(label8);
@@ -45,23 +40,24 @@ namespace livrable.model
             categorieItem.Name = "categorieItem";
             categorieItem.Size = new Size(240, 43);
             categorieItem.TabIndex = 11;
-           
+
             Allcategories.Add(categorieItem);
 
             notifyObserver();
         }
         public List<string> GetCatOptions() { return catOptions; }
         public void removeCategorie(Panel cat) { Allcategories.Remove(cat); }
-        public List<Panel> GetAllCategories() {  return Allcategories; }
-        public void attachObserver(IObserver observer) { observers.Add(observer);}
-        public void detachObserver(IObserver observer) { observers.Remove(observer);}
+        public List<Panel> GetAllCategories() { return Allcategories; }
+        public void attachObserver(IObserver observer) { observers.Add(observer); }
+        public void detachObserver(IObserver observer) { observers.Remove(observer); }
         public void notifyObserver()
         {
-            foreach (IObserver ob in observers) {
+            foreach (IObserver ob in observers)
+            {
                 ob.update(this);
             }
         }
 
-     
+
     }
 }
