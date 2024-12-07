@@ -41,9 +41,9 @@
             label4 = new Label();
             label5 = new Label();
             label10 = new Label();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            textBox3 = new TextBox();
             comboBox1 = new ComboBox();
             panelAddBudget = new Panel();
             groupBox1 = new GroupBox();
@@ -60,17 +60,23 @@
             BtnBack = new Button();
             BtnReport = new Button();
             BtnAddBudget = new Button();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            panelMain = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panelAddBudget.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(651, 22);
+            label1.Location = new Point(514, 15);
             label1.Name = "label1";
             label1.Size = new Size(201, 68);
             label1.TabIndex = 1;
@@ -86,7 +92,7 @@
             label2.Name = "label2";
             label2.Size = new Size(92, 26);
             label2.TabIndex = 2;
-            label2.Text = "Periodes";
+            label2.Text = "Périodes";
             // 
             // label3
             // 
@@ -101,9 +107,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.icons8_budget_40;
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(598, 32);
+            pictureBox1.Location = new Point(461, 25);
             pictureBox1.Margin = new Padding(10);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(65, 49);
@@ -126,10 +132,10 @@
             tableLayoutPanel1.Controls.Add(label4, 0, 2);
             tableLayoutPanel1.Controls.Add(label5, 0, 3);
             tableLayoutPanel1.Controls.Add(label10, 0, 4);
-            tableLayoutPanel1.Controls.Add(textBox3, 1, 2);
             tableLayoutPanel1.Controls.Add(textBox4, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox5, 1, 4);
-            tableLayoutPanel1.Location = new Point(688, 167);
+            tableLayoutPanel1.Controls.Add(textBox3, 1, 2);
+            tableLayoutPanel1.Location = new Point(58, 66);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666718F));
@@ -205,7 +211,6 @@
             label5.Size = new Size(123, 26);
             label5.TabIndex = 5;
             label5.Text = "Budget total";
-            label5.Click += label5_Click;
             // 
             // label10
             // 
@@ -217,16 +222,6 @@
             label10.Size = new Size(110, 26);
             label10.TabIndex = 21;
             label10.Text = "Différence";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(174, 150);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(337, 67);
-            textBox3.TabIndex = 18;
             // 
             // textBox4
             // 
@@ -248,13 +243,24 @@
             textBox5.Size = new Size(337, 67);
             textBox5.TabIndex = 20;
             // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Location = new Point(174, 150);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(337, 67);
+            textBox3.TabIndex = 18;
+            // 
             // comboBox1
             // 
             comboBox1.Anchor = AnchorStyles.None;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(346, 196);
+            comboBox1.Location = new Point(35, 66);
+            comboBox1.MaxDropDownItems = 12;
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(201, 28);
+            comboBox1.Size = new Size(348, 34);
             comboBox1.TabIndex = 17;
             // 
             // panelAddBudget
@@ -263,7 +269,7 @@
             panelAddBudget.Controls.Add(groupBox1);
             panelAddBudget.Controls.Add(BtnClose);
             panelAddBudget.Controls.Add(BtnSubmitBudget);
-            panelAddBudget.Location = new Point(234, 60);
+            panelAddBudget.Location = new Point(163, 64);
             panelAddBudget.Name = "panelAddBudget";
             panelAddBudget.Size = new Size(996, 642);
             panelAddBudget.TabIndex = 18;
@@ -280,13 +286,13 @@
             groupBox1.Controls.Add(label16);
             groupBox1.Controls.Add(textBoxTotalBudget);
             groupBox1.Controls.Add(label14);
-            groupBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(60, 55);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(870, 490);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Budget informations";
+            groupBox1.Text = "Entrer les informations sur votre budget";
             // 
             // textBoxPeriod
             // 
@@ -310,11 +316,11 @@
             label13.Anchor = AnchorStyles.None;
             label13.AutoSize = true;
             label13.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(104, 152);
+            label13.Location = new Point(100, 170);
             label13.Name = "label13";
-            label13.Size = new Size(92, 26);
+            label13.Size = new Size(104, 26);
             label13.TabIndex = 6;
-            label13.Text = "Periodes";
+            label13.Text = "Périodes*";
             // 
             // label15
             // 
@@ -323,10 +329,9 @@
             label15.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.Location = new Point(63, 325);
             label15.Name = "label15";
-            label15.Size = new Size(165, 26);
+            label15.Size = new Size(177, 26);
             label15.TabIndex = 8;
-            label15.Text = "Dépenses totales";
-            label15.Click += label15_Click;
+            label15.Text = "Dépenses totales*";
             // 
             // textBoxNotes
             // 
@@ -343,9 +348,9 @@
             label16.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.Location = new Point(622, 325);
             label16.Name = "label16";
-            label16.Size = new Size(123, 26);
+            label16.Size = new Size(135, 26);
             label16.TabIndex = 9;
-            label16.Text = "Budget total";
+            label16.Text = "Budget total*";
             // 
             // textBoxTotalBudget
             // 
@@ -360,12 +365,11 @@
             label14.Anchor = AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(648, 152);
+            label14.Location = new Point(644, 170);
             label14.Name = "label14";
             label14.Size = new Size(65, 26);
             label14.TabIndex = 7;
             label14.Text = "Notes";
-            label14.Click += label14_Click;
             // 
             // BtnClose
             // 
@@ -393,7 +397,7 @@
             // 
             // BtnBack
             // 
-            BtnBack.Location = new Point(24, 715);
+            BtnBack.Location = new Point(72, 727);
             BtnBack.Name = "BtnBack";
             BtnBack.Size = new Size(81, 33);
             BtnBack.TabIndex = 19;
@@ -404,7 +408,7 @@
             // BtnReport
             // 
             BtnReport.ImageAlign = ContentAlignment.MiddleRight;
-            BtnReport.Location = new Point(1419, 715);
+            BtnReport.Location = new Point(1115, 727);
             BtnReport.Name = "BtnReport";
             BtnReport.Size = new Size(83, 33);
             BtnReport.TabIndex = 20;
@@ -414,7 +418,7 @@
             // BtnAddBudget
             // 
             BtnAddBudget.ImageAlign = ContentAlignment.MiddleRight;
-            BtnAddBudget.Location = new Point(1379, 34);
+            BtnAddBudget.Location = new Point(1075, 41);
             BtnAddBudget.Name = "BtnAddBudget";
             BtnAddBudget.Size = new Size(123, 42);
             BtnAddBudget.TabIndex = 21;
@@ -422,20 +426,52 @@
             BtnAddBudget.UseVisualStyleBackColor = true;
             BtnAddBudget.Click += BtnAddBudget_Click;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(72, 118);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(421, 566);
+            groupBox2.TabIndex = 22;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Sélectionne une période";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(tableLayoutPanel1);
+            groupBox3.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox3.Location = new Point(565, 118);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(633, 566);
+            groupBox3.TabIndex = 23;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Informations sur votre budget";
+            // 
+            // panelMain
+            // 
+            panelMain.Controls.Add(label1);
+            panelMain.Controls.Add(panelAddBudget);
+            panelMain.Controls.Add(groupBox3);
+            panelMain.Controls.Add(pictureBox1);
+            panelMain.Controls.Add(groupBox2);
+            panelMain.Controls.Add(BtnBack);
+            panelMain.Controls.Add(BtnAddBudget);
+            panelMain.Controls.Add(BtnReport);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1277, 772);
+            panelMain.TabIndex = 24;
+            panelMain.Paint += panelMain_Paint;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 255, 255);
-            ClientSize = new Size(1524, 771);
-            Controls.Add(BtnAddBudget);
-            Controls.Add(BtnReport);
-            Controls.Add(BtnBack);
-            Controls.Add(panelAddBudget);
-            Controls.Add(comboBox1);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(pictureBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(1277, 772);
+            Controls.Add(panelMain);
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
@@ -445,8 +481,11 @@
             panelAddBudget.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -481,5 +520,8 @@
         private Button BtnAddBudget;
         private Button BtnClose;
         private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private Panel panelMain;
     }
 }

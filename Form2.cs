@@ -40,14 +40,14 @@ namespace livrable
                     // Calculer la différence
                     int difference = budgetInfo.TotalBudget - budgetInfo.CurrentExpenses;
                     textBox5.Text = $"{difference}$"; // Difference
-                    textBox6.Text = difference >= 0 ? "Oui" : "Non"; // On Budget
+                    textBox6.Text = difference >= 0 ? "Oui" : "Non"; 
                     if (difference >= 0)
                     {
-                        textBox6.BackColor = Color.LightGreen; // Vert pour "Yes"
+                        textBox6.BackColor = Color.LightGreen; 
                     }
                     else
                     {
-                        textBox6.BackColor = Color.LightCoral; // Rouge pour "No"
+                        textBox6.BackColor = Color.LightCoral; 
                     }
                 }
             }
@@ -58,13 +58,19 @@ namespace livrable
             string period = textBoxPeriod.Text;
             string notes = textBoxNotes.Text;
 
-            if (int.TryParse(textBoxCurrentExpenses.Text, out int currentExpenses) &&
-                int.TryParse(textBoxTotalBudget.Text, out int totalBudget))
+            if (string.IsNullOrEmpty(period))
             {
-                // Ajouter les données au dictionnaire
+                MessageBox.Show("Veuillez entrer une période valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+            if (int.TryParse(textBoxCurrentExpenses.Text.Replace("$", "").Trim(), out int currentExpenses) && 
+                int.TryParse(textBoxTotalBudget.Text.Replace("$", "").Trim(), out int totalBudget))
+            {
+                // Ajout des données au dictionnaire
                 budgets[period] = (notes, currentExpenses, totalBudget);
 
-                // Ajouter la période au ComboBox
+                // Ajout de la période au ComboBox
                 comboBox1.Items.Add(period);
 
                 // Effacer les champs et masquer le panel
@@ -72,7 +78,7 @@ namespace livrable
                 textBoxNotes.Clear();
                 textBoxCurrentExpenses.Clear();
                 textBoxTotalBudget.Clear();
-                panelAddBudget.Visible = false;
+                //panelAddBudget.Visible = false;
             }
             else
             {
@@ -88,7 +94,7 @@ namespace livrable
 
         private void BtnAddBudget_Click(object sender, EventArgs e)
         {
-            panelAddBudget.Visible = true; // Afficher le panel
+            panelAddBudget.Visible = true;
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -106,7 +112,9 @@ namespace livrable
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            panelAddBudget.Visible=false;
+            panelMain.Visible = true;
+
         }
 
         private void textBoxPeriod_TextChanged(object sender, EventArgs e)
@@ -114,22 +122,7 @@ namespace livrable
 
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
+        private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 
         }
