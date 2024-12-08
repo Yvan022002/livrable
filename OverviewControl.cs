@@ -89,7 +89,7 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
     {
         datagrid_transactions.Rows.Clear();
 
-        foreach (var depense in depenses.Values)
+        foreach (var depense in depenses.Values.Where((item) => item.Date.Month == DateTime.Now.Month))
         {
             datagrid_transactions.Rows.Add(depense.Entreprise, depense.Description, depense.Amount, depense.Category, depense.Date);
 
@@ -137,6 +137,9 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
 
     private void btn_categories_Click(object sender, EventArgs e)
     {
-
+        if (!string.IsNullOrWhiteSpace(textbox_categories.Text))
+        {
+            categories_provider.AddCategory(textbox_categories.Text);
+        }
     }
 }

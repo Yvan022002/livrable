@@ -12,7 +12,8 @@ namespace livrable
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new MainForm());
+            var main_window = new MainForm();
+            Application.Run(main_window);
         }
     }
 }

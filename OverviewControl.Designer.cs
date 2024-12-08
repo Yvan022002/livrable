@@ -34,10 +34,11 @@
             btn_transactions = new Button();
             datagrid_transactions = new DataGridView();
             group_categories = new GroupBox();
+            textbox_categories = new TextBox();
+            listbox_categories = new ListBox();
             btn_categories = new Button();
             group_budget = new GroupBox();
             lbl_budget = new Label();
-            listbox_categories = new ListBox();
             ((System.ComponentModel.ISupportInitialize)depensesProviderBindingSource).BeginInit();
             group_transactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)datagrid_transactions).BeginInit();
@@ -59,7 +60,7 @@
             group_transactions.Size = new Size(934, 467);
             group_transactions.TabIndex = 2;
             group_transactions.TabStop = false;
-            group_transactions.Text = "Transactions";
+            group_transactions.Text = "Transactions mensuelles";
             // 
             // btn_transactions
             // 
@@ -85,6 +86,7 @@
             // 
             // group_categories
             // 
+            group_categories.Controls.Add(textbox_categories);
             group_categories.Controls.Add(listbox_categories);
             group_categories.Controls.Add(btn_categories);
             group_categories.Font = new Font("Segoe UI", 12F);
@@ -95,12 +97,28 @@
             group_categories.TabStop = false;
             group_categories.Text = "Catégories";
             // 
+            // textbox_categories
+            // 
+            textbox_categories.Font = new Font("Segoe UI", 14F);
+            textbox_categories.Location = new Point(21, 414);
+            textbox_categories.Name = "textbox_categories";
+            textbox_categories.Size = new Size(446, 32);
+            textbox_categories.TabIndex = 3;
+            // 
+            // listbox_categories
+            // 
+            listbox_categories.ItemHeight = 21;
+            listbox_categories.Location = new Point(21, 31);
+            listbox_categories.Name = "listbox_categories";
+            listbox_categories.Size = new Size(537, 361);
+            listbox_categories.TabIndex = 0;
+            // 
             // btn_categories
             // 
             btn_categories.Font = new Font("Segoe UI", 14F);
-            btn_categories.Location = new Point(171, 398);
+            btn_categories.Location = new Point(473, 414);
             btn_categories.Name = "btn_categories";
-            btn_categories.Size = new Size(239, 63);
+            btn_categories.Size = new Size(85, 32);
             btn_categories.TabIndex = 2;
             btn_categories.Text = "Ajouter";
             btn_categories.UseVisualStyleBackColor = true;
@@ -115,7 +133,7 @@
             group_budget.Size = new Size(1563, 211);
             group_budget.TabIndex = 4;
             group_budget.TabStop = false;
-            group_budget.Text = "Budget";
+            group_budget.Text = "Budget mensuel";
             // 
             // lbl_budget
             // 
@@ -126,14 +144,6 @@
             lbl_budget.TabIndex = 0;
             lbl_budget.Text = "0/1000";
             lbl_budget.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // listbox_categories
-            // 
-            listbox_categories.ItemHeight = 21;
-            listbox_categories.Location = new Point(21, 31);
-            listbox_categories.Name = "listbox_categories";
-            listbox_categories.Size = new Size(537, 361);
-            listbox_categories.TabIndex = 0;
             // 
             // OverviewControl
             // 
@@ -148,6 +158,7 @@
             group_transactions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)datagrid_transactions).EndInit();
             group_categories.ResumeLayout(false);
+            group_categories.PerformLayout();
             group_budget.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -162,5 +173,6 @@
         private GroupBox group_budget;
         private Label lbl_budget;
         private ListBox listbox_categories;
+        private TextBox textbox_categories;
     }
 }

@@ -36,11 +36,22 @@ namespace livrable
                     Entreprise = entreprise,
                     Amount = amount
                 });
+
+                Clear();
             }
             else
             {
                 lbl_amount_err.Visible = true;
             }
+        }
+
+        private void Clear()
+        {
+            txt_desc.Clear();
+            txt_cat.SelectedIndex = 0;
+            date_Transaction.Value = DateTime.Now;
+            txt_price.Clear();
+            txt_entreprise.Clear();
         }
     }
 }

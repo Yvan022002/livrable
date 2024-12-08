@@ -27,6 +27,8 @@ namespace livrable
 
             lbl_page_title.Text = "Tableau de bord";
             pnl_page.Controls.Add(overview);
+
+            CenterToScreen();
         }
 
         private void btn_dashboard_Click(object sender, EventArgs e)
