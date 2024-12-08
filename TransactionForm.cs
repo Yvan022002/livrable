@@ -1,67 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using livrable.model;
+﻿using livrable.model;
 
 namespace livrable
 {
     public partial class TransactionForm : Form
     {
-        private Form1 form1;
-        private categories cats;
-        public TransactionForm(Form1 mainForm)
+        DepensesProvider depenses_provider;
+        CategoriesProvider categories_provider;
+
+        public TransactionForm(DepensesProvider depenses_provider, CategoriesProvider categories_provider)
         {
-            form1 = mainForm;
-            cats=form1.GetCategories();
-           
+            this.depenses_provider = depenses_provider;
+            this.categories_provider = categories_provider;
             InitializeComponent();
-
-            loadCategorieOption();
-
+            txt_cat.DataSource = categories_provider.categories.ToList();
+            lbl_amount_err.Visible = false;
         }
-
-    
-  
 
         private void btn_addTransaction_Click(object sender, EventArgs e)
         {
             var desc = txt_desc.Text;
             var cat = txt_cat.Text;
-            var date=date_Transaction.Value;
-            var price = txt_price.Text;
+            var date = date_Transaction.Value;
+            var amount_success = Double.TryParse(txt_price.Text, out var amount);
             var entreprise = txt_entreprise.Text;
-            form1.GetDepenses().addDepense(new Depense
+
+            if (amount_success)
             {
-                description = desc,
-                categorie = cat,
-                date = date,
-                entreprise = entreprise,
-                prix = price
-            });
-            this.Close();
+                lbl_amount_err.Visible = false;
+
+                depenses_provider.AddDepense(new Depense
+                {
+                    Description = desc,
+                    Category = cat,
+                    Date = date,
+                    Entreprise = entreprise,
+                    Amount = amount
+                });
+            }
+            else
+            {
+                lbl_amount_err.Visible = true;
+            }
         }
-
-        //remplis la list de categorie disponible pour une depense
-        //avec toutes les categorie par defaut (ici aucune)
-        private void loadCategorieOption()
-        {
-            List<string> catOptions = new List<string>();
-            catOptions = cats.GetCatOptions();
-            txt_cat.DataSource= catOptions;
-            
-        }
-
-        private void addTransaction_Load(object sender, EventArgs e)
-        {
-
-        }
-
-      
     }
 }

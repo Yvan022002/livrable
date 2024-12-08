@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace livrable.model;
 
-namespace livrable.model
+public record struct Depense(
+    string Entreprise,
+    string Description,
+    string Category,
+    double Amount,
+    DateTime Date
+)
 {
-    public class Depense
+    public readonly Guid Id = Guid.NewGuid();
+
+    public override readonly int GetHashCode()
     {
-
-        public string description { get; set; }
-        public string categorie { get; set; }
-        public DateTime date { get; set; }
-        public string prix { get; set; }
-        public string entreprise { get; set; }
-
-    
+        return Id.GetHashCode();
     }
-}
+};

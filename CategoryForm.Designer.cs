@@ -1,6 +1,6 @@
-﻿namespace livrable
+﻿/*namespace livrable
 {
-    partial class categorieForm
+    partial class CategoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -119,4 +119,4 @@
         private PictureBox picBoxTest;
         private Label titre_CatForm;
     }
-}
+}*/
