@@ -9,7 +9,6 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
 {
     private DepensesProvider.Unsubscriber depenses_unsubscriber;
     private CategoriesProvider.Unsubscriber categories_unsubscriber;
-    private BudgetProvider.Unsubscriber budget_unsubscriber;
 
     DepensesProvider depenses_provider;
     CategoriesProvider categories_provider;
