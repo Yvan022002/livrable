@@ -6,10 +6,10 @@ namespace livrable
     {
         DepensesProvider depenses;
         CategoriesProvider categories;
-        BudgetProvider budget;
 
         OverviewControl overview;
         RapportControl rapport;
+        BudgetControl budget;
 
         public MainForm()
         {
@@ -17,13 +17,13 @@ namespace livrable
 
             depenses = new DepensesProvider();
             categories = new CategoriesProvider();
-            budget = new BudgetProvider();
 
             depenses.MockData();
             categories.MockData();
 
             rapport = new RapportControl(depenses, categories);
-            overview = new OverviewControl(depenses, categories, budget);
+            overview = new OverviewControl(depenses, categories);
+            budget = new BudgetControl(depenses);
 
             lbl_page_title.Text = "Tableau de bord";
             pnl_page.Controls.Add(overview);
@@ -49,7 +49,7 @@ namespace livrable
         {
             lbl_page_title.Text = "Budget";
             pnl_page.Controls.Clear();
-
+            pnl_page.Controls.Add(budget);
         }
     }
 }

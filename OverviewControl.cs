@@ -5,7 +5,7 @@ using livrable.model;
 using Categories2 = SortedSet<string>;
 using Depenses = SortedDictionary<Guid, model.Depense>;
 
-public partial class OverviewControl : UserControl, IObserver<Categories2>, IObserver<Depenses>, IObserver<double>
+public partial class OverviewControl : UserControl, IObserver<Categories2>, IObserver<Depenses>
 {
     private DepensesProvider.Unsubscriber depenses_unsubscriber;
     private CategoriesProvider.Unsubscriber categories_unsubscriber;
@@ -13,17 +13,14 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
 
     DepensesProvider depenses_provider;
     CategoriesProvider categories_provider;
-    BudgetProvider budget_provider;
 
-    public OverviewControl(DepensesProvider depenses_provider, CategoriesProvider categories_provider, BudgetProvider budget_provider)
+    public OverviewControl(DepensesProvider depenses_provider, CategoriesProvider categories_provider)
     {
         this.depenses_provider = depenses_provider;
         this.categories_provider = categories_provider;
-        this.budget_provider = budget_provider;
 
         depenses_provider.Subscribe(this);
         categories_provider.Subscribe(this);
-        budget_provider.Subscribe(this);
 
         InitializeComponent();
         SetupDataTable();
@@ -41,11 +38,6 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
         categories_unsubscriber.Dispose();
     }
 
-    void IObserver<double>.OnCompleted()
-    {
-        budget_unsubscriber.Dispose();
-    }
-
     public void OnError(Exception error)
     {
         throw new NotImplementedException();
@@ -60,11 +52,6 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
     public void OnNext(Categories2 value)
     {
         RefreshCategories(value);
-    }
-
-    public void OnNext(double value)
-    {
-        RefreshBudget(value);
     }
 
     private void SetupDataTable()
@@ -94,8 +81,6 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
             datagrid_transactions.Rows.Add(depense.Entreprise, depense.Description, depense.Amount, depense.Category, depense.Date);
 
         }
-
-        RefreshBudget(budget_provider.budget);
     }
 
     private void RefreshCategories(Categories2 categories)
@@ -104,29 +89,6 @@ public partial class OverviewControl : UserControl, IObserver<Categories2>, IObs
         foreach (var category in categories)
         {
             listbox_categories.Items.Add(category);
-        }
-    }
-
-    private void RefreshBudget(double budget)
-    {
-        var monthly_total = depenses_provider.depenses.Values
-                                .Where((item) => item.Date.Month == DateTime.Now.Month)
-                                .Select((item) => item.Amount)
-                                .Sum();
-
-        lbl_budget.Text = $"{monthly_total:C2} / {budget:C2}";
-
-        if (monthly_total > budget)
-        {
-            lbl_budget.ForeColor = Color.Red;
-        }
-        else if (monthly_total > 0.70 * budget)
-        {
-            lbl_budget.ForeColor = Color.Orange;
-        }
-        else
-        {
-            lbl_budget.ForeColor = Color.Green;
         }
     }
 
